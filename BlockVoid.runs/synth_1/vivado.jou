@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat May  8 00:28:20 2021
+# Process ID: 26900
+# Current directory: E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.runs/synth_1
+# Command line: vivado.exe -log Top_Level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Level.tcl
+# Log file: E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.runs/synth_1/Top_Level.vds
+# Journal file: E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Top_Level.tcl -notrace
