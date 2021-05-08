@@ -27,27 +27,28 @@ module Block_Gen_v2(
     );
     
     reg [6:0] prev_block = 0; 
-    reg [6:0] random_block = 0; 
+    wire[6:0] random_block; 
     reg [6:0] tmp = 0; 
-    reg generate_flag = 0; 
+//    reg generate_flag = 1; 
+//    reg gen_tmp = 1;
+    
+    PRNG_7bit_v3 prng (clk, random_block); 
     
     always @ (posedge var_clk) begin  
-        generate_flag <= 1;  
+//        generate_flag <= 1;  
+        prev_block <= next_block;
     end 
     
-    always @ (clk) begin  
-        if (generate_flag) 
-            random_block <= $urandom_range(0, 127); 
-    end 
-    
-    always @ (random_block) begin 
-        if (~(random_block[6]&(random_block[1]|random_block[2])&random_block[0]&(random_block[2]|random_block[4])&random_block[3])) begin    //random_block 
-            tmp = (prev_block | random_block) & 7'b1001111; 
-        if (~(tmp[6]&(tmp[1]|tmp[5])&tmp[0]&(tmp[2]|tmp[4])&tmp[3])) begin    //tmp 
-            next_block <= random_block; 
-            generate_flag <= 0; 
-            end 
-        end 
+    always @ (random_block) begin
+//        if (generate_flag) 
+            if (~(random_block[6]&(random_block[1]|random_block[5])&random_block[0]&(random_block[2]|random_block[4])&random_block[3])) begin    //random_block 
+                tmp = (prev_block | random_block); 
+                if (~(tmp[6]&(tmp[1]|tmp[5])&tmp[0]&(tmp[2]|tmp[4])&tmp[3])) begin    //tmp 
+                    next_block = random_block; 
+//                    generate_flag = 0; 
+                end 
+            end    
+            
     end 
     
 endmodule

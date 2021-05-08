@@ -39,7 +39,7 @@ module Top_Level(
 //    Debounce d3 (clk, reset, dR); 
     
 //    Controller c1 (dU,dD,dR, next_pos); 
-    Variable_Clk vclk (clk, var_clk); 
+    Variable_Clk vclk (clk, reset, var_clk); 
     Block_Gen_v2 b1 (clk, var_clk, next_block); 
     Background_Scroller s1 (var_clk, reset, next_block, next_background); 
 //    Map_Gen m1 (next_background, next_pos, next_map); 

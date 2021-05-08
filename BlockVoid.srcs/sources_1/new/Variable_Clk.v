@@ -21,7 +21,7 @@
 
 
 module Variable_Clk(
-    input clk,
+    input clk, reset,
     output var_clk
     );
     
@@ -32,16 +32,16 @@ module Variable_Clk(
     assign var_clk = tmp;
     
     always @ (posedge clk) begin 
+        if (reset) half_period <= min_freq_half_period; 
         if (cnt >= half_period) begin 
             tmp <= ~tmp; 
             cnt <= 0; 
-//            half_period <= half_period - 25000; 
-//            if (half_period == max_freq_half_period)  
-//                half_period <= max_freq_half_period;
+            half_period <= half_period - 25000; 
+            if (half_period <= max_freq_half_period)  
+                half_period <= max_freq_half_period;
         end 
         else begin
             cnt <= cnt + 1; 
-            
         end 
     end 
     

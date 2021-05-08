@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sat May  8 00:30:46 2021
+| Date         : Sun May  9 01:02:53 2021
 | Host         : DESKTOP-H1E7PQR running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file Top_Level_timing_summary_routed.rpt -pb Top_Level_timing_summary_routed.pb -rpx Top_Level_timing_summary_routed.rpx -warn_on_violation
 | Design       : Top_Level
@@ -39,12 +39,12 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (24)
+1. checking no_clock (246)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (44)
-5. checking no_input_delay (0)
-6. checking no_output_delay (4)
+4. checking unconstrained_internal_endpoints (308)
+5. checking no_input_delay (1)
+6. checking no_output_delay (11)
 7. checking multiple_clock (0)
 8. checking generated_clocks (0)
 9. checking loops (0)
@@ -52,11 +52,41 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (24)
--------------------------
- There are 22 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+1. checking no_clock (246)
+--------------------------
+ There are 111 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prev_block_reg[0]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prev_block_reg[1]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prev_block_reg[2]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prev_block_reg[3]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prev_block_reg[4]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prev_block_reg[5]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prev_block_reg[6]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prng/crn_reg[0]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prng/crn_reg[1]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prng/crn_reg[2]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prng/crn_reg[3]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prng/crn_reg[4]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prng/crn_reg[5]/Q (HIGH)
+
+ There are 7 register/latch pins with no clock driven by root clock pin: b1/prng/crn_reg[6]/Q (HIGH)
 
  There are 2 register/latch pins with no clock driven by root clock pin: dis1/clk200/tmp_reg/Q (HIGH)
+
+ There are 35 register/latch pins with no clock driven by root clock pin: vclk/tmp_reg/Q (HIGH)
 
 
 2. checking constant_clock (0)
@@ -69,23 +99,23 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (44)
--------------------------------------------------
- There are 44 pins that are not constrained for maximum delay. (HIGH)
+4. checking unconstrained_internal_endpoints (308)
+--------------------------------------------------
+ There are 308 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
-5. checking no_input_delay (0)
+5. checking no_input_delay (1)
 ------------------------------
- There are 0 input ports with no input delay specified.
+ There is 1 input port with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
-6. checking no_output_delay (4)
--------------------------------
- There are 4 ports with no output delay specified. (HIGH)
+6. checking no_output_delay (11)
+--------------------------------
+ There are 11 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 

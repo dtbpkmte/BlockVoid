@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"tb_scroller_time_impl.v" \
+"../../../../../BlockVoid.srcs/sources_1/new/Block_Gen_v2.v" \
+"../../../../../BlockVoid.srcs/sources_1/new/PRNG_3bit.v" \
+"../../../../../BlockVoid.srcs/sources_1/new/PRNG_7bit_v3.v" \
+"../../../../../BlockVoid.srcs/sim_1/new/tb_scroller.v" \
+
+# Do not sort compile order
+nosort

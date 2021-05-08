@@ -27,7 +27,7 @@ module tb_scroller;
     wire [6:0] next_block;
     wire [27:0] next_background;
     
-    Background_Scroller bs (var_clk, reset, next_block, next_background);
+//    Background_Scroller bs (var_clk, reset, next_block, next_background);
     Block_Gen_v2 bg (clk, var_clk, next_block);
     
 //    initial begin

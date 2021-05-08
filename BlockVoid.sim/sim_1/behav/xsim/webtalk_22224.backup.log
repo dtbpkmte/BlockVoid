@@ -2,11 +2,13 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Thu May  6 22:14:12 2021
-# Process ID: 7932
+# Start of session at: Sat May  8 22:09:34 2021
+# Process ID: 22224
 # Current directory: E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.sim/sim_1/behav/xsim/xsim.dir/tb_bcd_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.sim/sim_1/behav/xsim/xsim.dir/tb_PRNG_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
 source E:/US -notrace
+couldn't read file "E:/US": permission denied
+INFO: [Common 17-206] Exiting Webtalk at Sat May  8 22:09:34 2021...

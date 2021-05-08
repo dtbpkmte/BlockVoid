@@ -72,7 +72,6 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -92,6 +91,8 @@ read_verilog -library xil_defaultlib {
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Block_Gen_v2.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Display.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Not28bit.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/PRNG_3bit.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/PRNG_7bit_v3.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Variable_Clk.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/clock200Hz.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/counter2bit.v}
