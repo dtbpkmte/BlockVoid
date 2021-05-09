@@ -25,4 +25,7 @@ module Map_Gen(
     input [6:0] next_pos,
     output [27:0] next_map
     );
+    
+    assign next_map = next_background | {7'b0000000, next_pos, 14'b00000000000000}; 
+    
 endmodule

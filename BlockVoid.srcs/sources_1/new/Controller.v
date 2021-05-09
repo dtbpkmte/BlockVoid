@@ -27,49 +27,44 @@ module Controller(
     output [6:0] next_pos
     );
     
-    localparam  a=7'b1000000,  // upper _ 
-                f= 7'b0000010, // upper |
-                g=7'b0000001,  // mid _
-                e= 7'b0000100, // lower |    
-                d= 7'b0001000; // lower _ 
+    localparam  a= 7'b1000000,  // upper _ 40
+                f= 7'b0000010, // upper |  02
+                g= 7'b0000001,  // mid _   01
+                e= 7'b0000100, // lower |  04
+                d= 7'b0001000; // lower _  08
                 
-    reg [6:0] current_pos =g; 
-    reg [6:0] next_pos = 0; 
+    reg [6:0] current_pos = g;
+    assign next_pos = current_pos;
     
     always @ (U or D or reset) begin
     
         case (current_pos) 
             a: begin 
-                if (U & ~D) next_pos = d; 
-                else if (~U &D) next_pos = f; 
-                if (reset) next_pos = g; 
-                current_pos = next_pos; //update current state 
+                if (U & ~D) current_pos = d; 
+                else if (~U &D) current_pos = f; 
+                else if (reset) current_pos = g; 
             end 
             f:begin 
-                if (U & ~D) next_pos = a; 
-                else if (~U &D) next_pos = g; 
-                if (reset) next_pos = g; 
-                current_pos = next_pos; 
+                if (U & ~D) current_pos = a; 
+                else if (~U &D) current_pos = g; 
+                else if (reset) current_pos = g; 
             end 
             g:begin 
-                if (U & ~D) next_pos = f; 
-                else if (~U &D) next_pos = e; 
-                else if (reset) next_pos = g; 
-                current_pos = next_pos; 
+                if (U & ~D) current_pos = f; 
+                else if (~U &D) current_pos = e; 
+                else if (reset) current_pos = g; 
             end 
             e:begin 
-                if (U & ~D) next_pos =g; 
-                else if (~U &D) next_pos = d; 
-                else if (reset) next_pos = g; 
-                current_pos = next_pos; 
+                if (U & ~D) current_pos =g; 
+                else if (~U &D) current_pos = d; 
+                else if (reset) current_pos = g; 
              end 
             d:begin  
-                if (U & ~D) next_pos = e; 
-                else if (~U &D) next_pos = a; 
-                else if (reset) next_pos = g;  
-                current_pos = next_pos; 
+                if (U & ~D) current_pos = e; 
+                else if (~U &D) current_pos = a; 
+                else if (reset) current_pos = g;  
             end 
-            default: begin next_pos = g; end 
+            default: begin current_pos = g; end 
         endcase 
     end 
     

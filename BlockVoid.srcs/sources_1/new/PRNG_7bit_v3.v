@@ -29,10 +29,10 @@ module PRNG_7bit_v3(
     assign random_number = crn; 
     wire [2:0] seed; 
     PRNG_3bit seeder (clk, seed); 
-    reg [20:0] cnt = 0;
+    reg [22:0] cnt = 0;
     
     always @ (posedge clk) begin
-        if (cnt == 2000000) begin
+        if (cnt == 100) begin
             cnt <= 0;
             case (seed) 
                 0: crn <= {(crn[6]^ crn[5]^~(crn[4]+ crn[2])^~(crn[3]& crn[1]+ crn[0])), crn[6:1]}; 

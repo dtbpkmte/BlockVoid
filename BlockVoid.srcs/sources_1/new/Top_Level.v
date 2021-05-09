@@ -29,25 +29,41 @@ module Top_Level(
     output [6:0] seg
     );
     
-    wire dU, dD, dR, lost, var_clk; 
+    wire dU, dD, lost, var_clk; 
     wire [6:0] next_pos, next_block; 
 //    wire [15:0] score; 
     wire [27:0] next_background, next_map, score_display, display_input; 
     
-//    Debounce d1 (U,clk,dU); 
-//    Debounce d2 (D,clk,dD); 
-//    Debounce d3 (clk, reset, dR); 
+    wire [2:0] dbg_block_valid;
+    wire [6:0] dbg_random_block, dbg_valid_block, dbg_prev_block;
     
-//    Controller c1 (dU,dD,dR, next_pos); 
+    Debounce d1 (clk, U, dU); 
+    Debounce d2 (clk, D, dD);
+    
+    Controller c1 (U,D,reset, next_pos); 
+//    Controller_v2 c2 (clk, U, D, reset, next_pos); 
     Variable_Clk vclk (clk, reset, var_clk); 
-    Block_Gen_v2 b1 (clk, var_clk, next_block); 
+    Block_Gen_v2 b1 (clk, var_clk, next_block, 
+                        dbg_random_block, 
+                        dbg_block_valid, 
+                        dbg_valid_block, 
+                        dbg_prev_block); 
+    
+    //debug
+    ila_0 blockgen_debugger(clk, next_block, var_clk, 
+                            dbg_block_valid, 
+                            dbg_random_block, 
+                            dbg_valid_block,
+                            dbg_prev_block,
+                            U, D);
+    
     Background_Scroller s1 (var_clk, reset, next_block, next_background); 
-//    Map_Gen m1 (next_background, next_pos, next_map); 
+    Map_Gen m1 (next_background, next_pos, next_map); 
 //    Checker ch1 (next_background, next_pos, lost); 
 //    Score_Counter sc1 (var_clk, dR, lost, score); 
 //    Score_Decoder sd1 (score, score_display); 
 //    Mux2to1 mux1 (next_map, score_display, lost, display_input); 
     
-    Display dis1 (next_background, clk, an, seg); 
+    Display dis1 (next_map, clk, an, seg); 
     
 endmodule

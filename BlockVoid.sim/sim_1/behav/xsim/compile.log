@@ -1,8 +1,6 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Block_Gen_v2.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Block_Gen_v2
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/PRNG_3bit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module PRNG_3bit
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/PRNG_7bit_v3.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module PRNG_7bit_v3
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sim_1/new/tb_scroller.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_scroller
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Map_Gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Map_Gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sim_1/new/tb_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_controller

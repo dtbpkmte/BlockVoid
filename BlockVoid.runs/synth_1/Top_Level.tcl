@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
@@ -78,8 +79,10 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.cache/wt} [current_project]
 set_property parent.project_path {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.xpr} [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo {e:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.cache/ip} [current_project]
@@ -89,7 +92,10 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Background_Scroller.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Block_Gen_v2.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Controller.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Debounce.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Display.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Map_Gen.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Not28bit.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/PRNG_3bit.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/PRNG_7bit_v3.v}
@@ -100,6 +106,12 @@ read_verilog -library xil_defaultlib {
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/imports/new/mux4to1.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Top_Level.v}
 }
+read_ip -quiet {{E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/ip/ila_0/ila_0.xci}}
+set_property used_in_synthesis false [get_files -all {{e:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc}}]
+set_property used_in_implementation false [get_files -all {{e:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc}}]
+set_property used_in_implementation false [get_files -all {{e:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc}}]
+set_property used_in_implementation false [get_files -all {{e:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.gen/sources_1/ip/ila_0/ila_0_ooc.xdc}}]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

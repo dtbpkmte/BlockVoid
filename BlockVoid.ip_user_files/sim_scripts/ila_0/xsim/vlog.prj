@@ -1,0 +1,10 @@
+sv xpm --include "../../../../BlockVoid.gen/sources_1/ip/ila_0/hdl/verilog" \
+"D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"D:/Xilinx/Vivado/2020.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+
+verilog xil_defaultlib --include "../../../../BlockVoid.gen/sources_1/ip/ila_0/hdl/verilog" \
+"../../../../BlockVoid.gen/sources_1/ip/ila_0/sim/ila_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
