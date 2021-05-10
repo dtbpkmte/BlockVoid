@@ -24,16 +24,18 @@ module Checker(
     input reset,
     input [27:0] next_background,
     input [6:0] next_pos,
-    output lost, dbg
+    output reg lost, wire dbg_lock
     );
     
     reg lock = 0;
-    assign lost = (|(next_background[20:14] & next_pos)) | lock;
-    assign dbg = (|(next_background[20:14] & next_pos));
+    assign dbg_lock = lock;
     
     always @ (next_background, next_pos, reset) begin
         if (reset) lock = 0;
         else if ((|(next_background[20:14] & next_pos))) lock = 1;
-        else lock = lock;
+    end
+    
+    always @ (lock) begin
+        lost = lock;
     end
 endmodule

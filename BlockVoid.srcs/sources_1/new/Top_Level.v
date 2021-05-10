@@ -37,6 +37,7 @@ module Top_Level(
     wire [1:0] dbg_block_valid;
     wire [6:0] dbg_random_block, dbg_valid_block, dbg_prev_block;
     wire [6:0] dbg_current_state, dbg_next_state;
+    wire dbg_lock;
     
     Debounce d1 (clk, U, dU); 
     Debounce d2 (clk, D, dD);
@@ -55,15 +56,15 @@ module Top_Level(
                             dbg_random_block, 
                             dbg_valid_block,
                             dbg_prev_block,
-                            lost, reset);
+                            lost, reset, dbg_lock);
     
     Background_Scroller s1 (var_clk, reset, next_block, next_background); 
     Map_Gen m1 (next_background, next_pos, next_map); 
-//    Checker ch1 (reset, next_background, next_pos, lost); 
-//    Score_Counter sc1 (var_clk, reset, lost, score); 
-//    Score_Decoder sd1 (score, score_display); 
-//    Mux2to1 mux1 (next_map, score_display, lost, display_input); 
+    Checker ch1 (reset, next_background, next_pos, lost, dbg_lock); 
+    Score_Counter sc1 (var_clk, reset, lost, score); 
+    Score_Decoder sd1 (score, score_display); 
+    Mux2to1 mux1 (next_map, score_display, lost, display_input); 
     
-    Display dis1 (next_map, clk, an, seg); 
+    Display dis1 (display_input, clk, an, seg); 
     
 endmodule

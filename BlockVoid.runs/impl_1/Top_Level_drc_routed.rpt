@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Mon May 10 15:44:23 2021
+| Date         : Tue May 11 01:51:41 2021
 | Host         : DESKTOP-H1E7PQR running 64-bit major release  (build 9200)
 | Command      : report_drc -file Top_Level_drc_routed.rpt -pb Top_Level_drc_routed.pb -rpx Top_Level_drc_routed.rpx
 | Design       : Top_Level
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 5
+             Violations found: 14
 +-----------+----------+-----------------------------------------------------+------------+
 | Rule      | Severity | Description                                         | Violations |
 +-----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| PDRC-153  | Warning  | Gated clock check                                   | 3          |
+| PDRC-153  | Warning  | Gated clock check                                   | 12         |
 | RTSTAT-10 | Warning  | No routable loads                                   | 1          |
 +-----------+----------+-----------------------------------------------------+------------+
 
@@ -55,12 +55,57 @@ Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net b1/prng/crn_reg[5]_0[0] is a gated clock net sourced by a combinational pin b1/prng/current_block_reg[6]_i_1/O, cell b1/prng/current_block_reg[6]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net b1/prng/p_2_out[0] is a gated clock net sourced by a combinational pin b1/prng/dbg_block_valid_reg[0]_i_2/O, cell b1/prng/dbg_block_valid_reg[0]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net b1/prng/p_2_out[0] is a gated clock net sourced by a combinational pin b1/prng/dbg_block_valid_reg[0]_i_2/O, cell b1/prng/dbg_block_valid_reg[0]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net ch1/lock_reg_i_1_n_0 is a gated clock net sourced by a combinational pin ch1/lock_reg_i_1/O, cell ch1/lock_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net sd1/b2b/E[0] is a gated clock net sourced by a combinational pin sd1/b2b/bcd_display_reg[6]_i_2__1/O, cell sd1/b2b/bcd_display_reg[6]_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net sd1/b2b/bcd_display_reg[6]_i_3__0_0[0] is a gated clock net sourced by a combinational pin sd1/b2b/bcd_display_reg[6]_i_2__0/O, cell sd1/b2b/bcd_display_reg[6]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net sd1/b2b/p_16_in is a gated clock net sourced by a combinational pin sd1/b2b/temp_reg[20]_i_2/O, cell sd1/b2b/temp_reg[20]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net sd1/b2b/p_33_out[16] is a gated clock net sourced by a combinational pin sd1/b2b/temp_reg[16]_i_2/O, cell sd1/b2b/temp_reg[16]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#8 Warning
+Gated clock check  
+Net sd1/b2b/p_33_out[17] is a gated clock net sourced by a combinational pin sd1/b2b/temp_reg[17]_i_2/O, cell sd1/b2b/temp_reg[17]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#9 Warning
+Gated clock check  
+Net sd1/b2b/p_33_out[18] is a gated clock net sourced by a combinational pin sd1/b2b/temp_reg[18]_i_2/O, cell sd1/b2b/temp_reg[18]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#10 Warning
+Gated clock check  
+Net sd1/b2b/p_33_out[19] is a gated clock net sourced by a combinational pin sd1/b2b/temp_reg[19]_i_2/O, cell sd1/b2b/temp_reg[19]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#11 Warning
+Gated clock check  
+Net sd1/b2b/temp_reg[16]_i_6_0[0] is a gated clock net sourced by a combinational pin sd1/b2b/bcd_display_reg[6]_i_2/O, cell sd1/b2b/bcd_display_reg[6]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#12 Warning
+Gated clock check  
+Net sd1/b2b/tmp_score_reg[2]_0[0] is a gated clock net sourced by a combinational pin sd1/b2b/bcd_display_reg[6]_i_2__2/O, cell sd1/b2b/bcd_display_reg[6]_i_2__2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 RTSTAT-10#1 Warning

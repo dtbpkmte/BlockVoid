@@ -93,14 +93,20 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Background_Scroller.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Block_Gen_v2.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Checker.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Controller_v2.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Debounce.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Display.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Map_Gen.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Mux2to1.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Not28bit.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/PRNG_3bit.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/PRNG_7bit_v3.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Score_Counter.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Score_Decoder.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Variable_Clk.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/bcd_to_display.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/bin_to_bcd.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/clock200Hz.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/counter2bit.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/imports/new/decoder2to4.v}
