@@ -24,6 +24,11 @@ module Mux2to1(
     input [27:0] next_map,
     input [27:0] score_display,
     input lost,
-    output [27:0] display_input
+    output reg [27:0] display_input
     );
+    
+    always @ (next_map, score_display, lost)
+        if (lost) display_input = score_display;
+        else display_input = next_map;
+    
 endmodule

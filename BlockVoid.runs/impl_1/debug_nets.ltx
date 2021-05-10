@@ -231,7 +231,7 @@
                                 "portIndex": 6,
                                 "nets": [
                                     {
-                                        "name": "U_IBUF",
+                                        "name": "lost",
                                         "isBus": false
                                     }
                                 ]
@@ -247,8 +247,42 @@
                                 "portIndex": 7,
                                 "nets": [
                                     {
-                                        "name": "D_IBUF",
-                                        "isBus": false
+                                        "name": "reset_IBUF",
+                                        "isBus": false,
+                                        "parentNetId": 32
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "parent_nets": [
+                    {
+                        "id": 32,
+                        "name": "reset_IBUF",
+                        "state_reg": [
+                            {
+                                "name": "c2/current_state_reg[1]",
+                                "states": [
+                                    {
+                                        "name": "f",
+                                        "val": "0000010"
+                                    },
+                                    {
+                                        "name": "g",
+                                        "val": "0000001"
+                                    },
+                                    {
+                                        "name": "e",
+                                        "val": "0000100"
+                                    },
+                                    {
+                                        "name": "d",
+                                        "val": "0001000"
+                                    },
+                                    {
+                                        "name": "a",
+                                        "val": "1000000"
                                     }
                                 ]
                             }

@@ -2,10 +2,10 @@
 # Webtalk v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat May  8 22:45:39 2021
-# Process ID: 36528
+# Start of session at: Mon May 10 13:20:41 2021
+# Process ID: 40276
 # Current directory: E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.sim/sim_1/behav/xsim/xsim.dir/tb_scroller_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.sim/sim_1/behav/xsim/xsim.dir/tb_Score_Counter_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------

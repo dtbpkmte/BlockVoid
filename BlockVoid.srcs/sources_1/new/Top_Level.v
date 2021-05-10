@@ -29,19 +29,19 @@ module Top_Level(
     output [6:0] seg
     );
     
-    wire dU, dD, lost, var_clk; 
+    wire dU, dD, lost, var_clk;
     wire [6:0] next_pos, next_block; 
-//    wire [15:0] score; 
+    wire [15:0] score; 
     wire [27:0] next_background, next_map, score_display, display_input; 
     
-    wire [2:0] dbg_block_valid;
+    wire [1:0] dbg_block_valid;
     wire [6:0] dbg_random_block, dbg_valid_block, dbg_prev_block;
+    wire [6:0] dbg_current_state, dbg_next_state;
     
     Debounce d1 (clk, U, dU); 
     Debounce d2 (clk, D, dD);
     
-    Controller c1 (U,D,reset, next_pos); 
-//    Controller_v2 c2 (clk, U, D, reset, next_pos); 
+    Controller_v2 c2 (clk, dU, dD, reset, next_pos, dbg_current_state, dbg_next_state); 
     Variable_Clk vclk (clk, reset, var_clk); 
     Block_Gen_v2 b1 (clk, var_clk, next_block, 
                         dbg_random_block, 
@@ -55,12 +55,12 @@ module Top_Level(
                             dbg_random_block, 
                             dbg_valid_block,
                             dbg_prev_block,
-                            U, D);
+                            lost, reset);
     
     Background_Scroller s1 (var_clk, reset, next_block, next_background); 
     Map_Gen m1 (next_background, next_pos, next_map); 
-//    Checker ch1 (next_background, next_pos, lost); 
-//    Score_Counter sc1 (var_clk, dR, lost, score); 
+//    Checker ch1 (reset, next_background, next_pos, lost); 
+//    Score_Counter sc1 (var_clk, reset, lost, score); 
 //    Score_Decoder sd1 (score, score_display); 
 //    Mux2to1 mux1 (next_map, score_display, lost, display_input); 
     

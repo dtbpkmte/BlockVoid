@@ -26,4 +26,18 @@ module Score_Counter(
     input lost,
     output [15:0] score
     );
+    
+    reg [15:0] tmp_score = 0;
+    assign score = tmp_score;
+    
+    always @ (posedge var_clk, posedge reset) begin 
+        if (reset) tmp_score <= 0; 
+        else begin 
+//            tmp_score <= tmp_score + 1; 
+//            if (tmp_score > 9999) tmp_score <= 9999; 
+            tmp_score <= (lost || (tmp_score >= 9999)) ? tmp_score : tmp_score+1;
+        end 
+        
+    end 
+    
 endmodule

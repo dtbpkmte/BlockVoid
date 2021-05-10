@@ -73,6 +73,7 @@ OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -92,7 +93,7 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Background_Scroller.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Block_Gen_v2.v}
-  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Controller.v}
+  {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Controller_v2.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Debounce.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Display.v}
   {E:/US study/WPI/2021_Spring/Courses/D_ECE2029/BlockVoid/BlockVoid.srcs/sources_1/new/Map_Gen.v}

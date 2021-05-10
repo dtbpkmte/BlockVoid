@@ -36,32 +36,32 @@ module Controller(
     reg [6:0] current_pos = g;
     assign next_pos = current_pos;
     
-    always @ (U or D or reset) begin
+    always @ (U, D, reset) begin
     
         case (current_pos) 
             a: begin 
-                if (U & ~D) current_pos = d; 
-                else if (~U &D) current_pos = f; 
+                if (U) current_pos = d; 
+                else if (D) current_pos = f; 
                 else if (reset) current_pos = g; 
             end 
             f:begin 
-                if (U & ~D) current_pos = a; 
-                else if (~U &D) current_pos = g; 
+                if (U) current_pos = a; 
+                else if (D) current_pos = g; 
                 else if (reset) current_pos = g; 
             end 
             g:begin 
-                if (U & ~D) current_pos = f; 
-                else if (~U &D) current_pos = e; 
+                if (U) current_pos = f; 
+                else if (D) current_pos = e; 
                 else if (reset) current_pos = g; 
             end 
             e:begin 
-                if (U & ~D) current_pos =g; 
-                else if (~U &D) current_pos = d; 
+                if (U) current_pos =g; 
+                else if (D) current_pos = d; 
                 else if (reset) current_pos = g; 
              end 
             d:begin  
-                if (U & ~D) current_pos = e; 
-                else if (~U &D) current_pos = a; 
+                if (U) current_pos = e; 
+                else if (D) current_pos = a; 
                 else if (reset) current_pos = g;  
             end 
             default: begin current_pos = g; end 
